@@ -303,22 +303,6 @@
       &:nth-child(4) {
         margin-bottom: 38px;
       }
-
-      //&.single-line {
-      //  display: flex; /* Flexbox для строки */
-      //  justify-content: space-between;
-      //  padding: 10px 0;
-      //  border-bottom: 1px solid #ddd;
-      //  td {
-      //    display: inline; /* Для отображения в одну строку */
-      //    padding: 0;
-      //    margin: 0;
-      //    &:first-child {
-      //      font-weight: bold;
-      //      margin-right: 5px; /* Небольшой отступ между колонками */
-      //    }
-      //  }
-      //}
     }
 
     & td {
@@ -345,6 +329,7 @@
     margin-top: 88px;
     padding-left: 19px;
     position: relative;
+    width: 335px;
 
     &__title {
       width: 335px;
@@ -363,25 +348,49 @@
     }
 
     &__content {
-      position: relative;
       display: flex;
       overflow: hidden;
+      width: 335px;
       margin-top: 196px;
-      position: static;
+      flex-direction: column;
+      z-index: 1;
 
       &--airplane {
-        bottom: 316px;
+        position: absolute;
+        bottom: 318px;
         right: 12px;
         width: 335px;
         transform: rotate(-3deg);
+        z-index: 10;
 
         & img {
           width: 100%;
         }
       }
 
+      &--track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 0px;
+        width: 100%;
+      }
+
       &--item {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        width: 100%;
+        min-width: 335px;
+        height: 300px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &.active {
+          opacity: 1;
+        }
 
         & span {
           align-self: center;
@@ -399,28 +408,49 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
-      margin-top: 61px;
+      margin-top: 66px;
 
       &--prev {
         padding: 10px;
         cursor: pointer;
-        transition: background-color 0.3s;
 
-        & img {
+        &.disabled {
+          &.disabled {
+            & svg circle {
+              fill: $bcg-disabled-arrow;
+              pointer-events: none;
+            }
+          }
+        }
+
+        & svg {
           width: 36px;
           height: 36px;
+
+          &:hover circle {
+            fill: #fbce51;
+          }
         }
       }
 
       &--next {
         padding: 20px;
         cursor: pointer;
-        transition: background-color 0.3s;
 
-        & img {
+        &.disabled {
+          & svg circle {
+            fill: $bcg-disabled-arrow;
+            pointer-events: none;
+          }
+        }
+
+        & svg {
           width: 36px;
           height: 36px;
+
+          &:hover circle {
+            fill: #fbce51;
+          }
         }
       }
 
@@ -436,17 +466,24 @@
           cursor: pointer;
           transition: background-color 0.3s;
         }
+
+        & .dot.active {
+          background-color: #313131;
+        }
       }
     }
   }
+
 
   .tournament {
     margin-top: 99px;
     padding-left: 0px;
     position: relative;
+
     &__header {
       flex-direction: column;
       padding-left: 19px;
+
       &--title {
         line-height: 38px;
         display: flex;
@@ -454,6 +491,7 @@
         font-size: 36px;
         align-items: center;
       }
+
       &--pagination {
         position: absolute;
         bottom: 14px;
@@ -462,40 +500,58 @@
         &--arrow-left {
           width: 36px;
           height: 36px;
-          & img {
+
+          & svg {
             width: 100%;
+
+            &:hover circle {
+              fill: #fbce51;
+            }
           }
         }
+
         &--arrow-right {
           width: 36px;
           height: 36px;
-          & img {
+
+          & svg {
             width: 100%;
+
+            &:hover circle {
+              fill: #fbce51;
+            }
           }
         }
       }
     }
+
     &__slider {
       width: 370px;
       height: 500px;
       margin-top: 18px;
       overflow: hidden;
+
       &--slide {
         flex: 0 0 100%;
         gap: 10px;
+
         &--image {
           width: 244px;
           height: 244px;
+
           & img {
             width: 100%;
           }
         }
+
         &--title {
           padding-top: 46px;
         }
+
         &--description {
           padding-top: 5px;
         }
+
         &--details {
           padding-top: 7px;
           width: 113px;
@@ -521,7 +577,7 @@
   }
 
   .footer {
-    adding: 43px 20px 4px 9px;
+    padding: 38px 22px 1px 18px;
     background: #e9ded4;
     height: 160px;
     font-family: $font-family;
@@ -529,6 +585,7 @@
     font-size: 16px;
     line-height: 120%;
     opacity: 0.6;
+
     & span {
       text-align: center;
     }

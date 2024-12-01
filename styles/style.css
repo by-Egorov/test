@@ -141,7 +141,6 @@ a {
   align-items: center;
   gap: 17px;
   padding-top: 10px;
-  color: #1f1f1f;
   z-index: 10;
 }
 .header__wrapper--content--buttons-btn {
@@ -149,6 +148,7 @@ a {
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
+  color: #1f1f1f;
   text-align: center;
   padding: 12px 49px;
   border: 2px solid #1f1f1f;
@@ -156,12 +156,20 @@ a {
   min-width: 263px;
   min-height: 72px;
   background: transparent;
+  cursor: pointer;
+}
+.header__wrapper--content--buttons-btn:hover {
+  background-color: #1f1f1f;
+  color: #fff;
 }
 .header__wrapper--content--buttons-btn.other-btn {
   background-color: #1f1f1f;
-}
-.header__wrapper--content--buttons-btn.other-btn a {
   color: #fff;
+}
+.header__wrapper--content--buttons-btn.other-btn:hover {
+  background: #fbce51;
+  color: #1f1f1f;
+  border: none;
 }
 .header__wrapper--content--buttons-btn span {
   display: block;
@@ -398,10 +406,14 @@ a {
 
 /* Стиль для мобильной версии */
 .details {
+  position: relative;
   margin-top: 200px;
   font-family: "Merriweather", sans-serif;
   color: #313131;
   padding-left: 71px;
+}
+.details__pagination {
+  display: none;
 }
 .details__title {
   width: 806px;
@@ -426,7 +438,7 @@ a {
   width: 280px;
   height: 48px;
 }
-.details__content {
+.details__content--track {
   display: grid;
   grid-template-columns: repeat(3, 394px);
   grid-template-rows: repeat(3, 112px);
@@ -466,6 +478,7 @@ a {
   position: absolute;
   bottom: -30px;
   right: 9px;
+  z-index: 10;
 }
 .details__content--pagination {
   visibility: hidden;
@@ -495,6 +508,18 @@ a {
   gap: 14px;
   margin-right: 75px;
 }
+.tournament__header--pagination--arrow-left.disabled svg circle {
+  fill: #d6d6d6;
+}
+.tournament__header--pagination--arrow-left:hover svg circle {
+  fill: #fbce51;
+}
+.tournament__header--pagination--arrow-right.disabled svg circle {
+  fill: #d6d6d6;
+}
+.tournament__header--pagination--arrow-right:hover svg circle {
+  fill: #fbce51;
+}
 .tournament__slider {
   width: 1222px;
   height: 500px;
@@ -502,8 +527,8 @@ a {
   overflow: hidden;
 }
 .tournament__slider--track {
+  width: 100% !important;
   display: flex;
-  gap: 20px;
   transition: transform 0.5s ease;
 }
 .tournament__slider--slide {
@@ -511,8 +536,6 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 0 37px;
-  width: 394px;
-  height: 462px;
 }
 .tournament__slider--slide--image {
   padding-top: 22px;
@@ -542,6 +565,10 @@ a {
   background: transparent;
   border-radius: 62px;
   padding: 12px;
+}
+.tournament__slider--slide--details button:hover {
+  background: #3057a2;
+  color: #fff;
 }
 
 .footer-running-line {
@@ -817,6 +844,7 @@ a {
     margin-top: 88px;
     padding-left: 19px;
     position: relative;
+    width: 335px;
   }
   .details__title {
     width: 335px;
@@ -832,23 +860,45 @@ a {
     width: 335px;
   }
   .details__content {
-    position: relative;
     display: flex;
     overflow: hidden;
+    width: 335px;
     margin-top: 196px;
-    position: static;
+    flex-direction: column;
+    z-index: 1;
   }
   .details__content--airplane {
-    bottom: 316px;
+    position: absolute;
+    bottom: 318px;
     right: 12px;
     width: 335px;
     transform: rotate(-3deg);
+    z-index: 10;
   }
   .details__content--airplane img {
     width: 100%;
   }
+  .details__content--track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 0px;
+    width: 100%;
+  }
   .details__content--item {
-    flex: 0 0 100%;
+    flex: 0 0 auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 100%;
+    min-width: 335px;
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .details__content--item.active {
+    opacity: 1;
   }
   .details__content--item span {
     align-self: center;
@@ -862,26 +912,37 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-top: 61px;
+    margin-top: 66px;
   }
   .details__pagination--prev {
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
-  .details__pagination--prev img {
+  .details__pagination--prev.disabled.disabled svg circle {
+    fill: #d6d6d6;
+    pointer-events: none;
+  }
+  .details__pagination--prev svg {
     width: 36px;
     height: 36px;
+  }
+  .details__pagination--prev svg:hover circle {
+    fill: #fbce51;
   }
   .details__pagination--next {
     padding: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
-  .details__pagination--next img {
+  .details__pagination--next.disabled svg circle {
+    fill: #d6d6d6;
+    pointer-events: none;
+  }
+  .details__pagination--next svg {
     width: 36px;
     height: 36px;
+  }
+  .details__pagination--next svg:hover circle {
+    fill: #fbce51;
   }
   .details__pagination--dots {
     display: flex;
@@ -894,6 +955,9 @@ a {
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s;
+  }
+  .details__pagination--dots .dot.active {
+    background-color: #313131;
   }
   .tournament {
     margin-top: 99px;
@@ -920,15 +984,21 @@ a {
     width: 36px;
     height: 36px;
   }
-  .tournament__header--pagination--arrow-left img {
+  .tournament__header--pagination--arrow-left svg {
     width: 100%;
+  }
+  .tournament__header--pagination--arrow-left svg:hover circle {
+    fill: #fbce51;
   }
   .tournament__header--pagination--arrow-right {
     width: 36px;
     height: 36px;
   }
-  .tournament__header--pagination--arrow-right img {
+  .tournament__header--pagination--arrow-right svg {
     width: 100%;
+  }
+  .tournament__header--pagination--arrow-right svg:hover circle {
+    fill: #fbce51;
   }
   .tournament__slider {
     width: 370px;
@@ -973,7 +1043,7 @@ a {
     margin-top: 85px;
   }
   .footer {
-    adding: 43px 20px 4px 9px;
+    padding: 38px 22px 1px 18px;
     background: #e9ded4;
     height: 160px;
     font-family: "Golos Text", sans-serif;

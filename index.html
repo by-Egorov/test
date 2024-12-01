@@ -25,11 +25,13 @@
                     <p>Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
                 </div>
                 <div class="header__wrapper--content--buttons">
-                    <button class="header__wrapper--content--buttons-btn other-btn"><span><a href="#support">Поддержать шахматную мысль</a></span>
-                    </button>
-                    <button class="header__wrapper--content--buttons-btn"><span><a
-                            href="#details">Подробнее о турнире</a></span>
-                    </button>
+                    <a href="#support">
+                        <button class="header__wrapper--content--buttons-btn other-btn">Поддержать шахматную мысль
+                        </button>
+                    </a>
+                    <a href="#details">
+                        <button class="header__wrapper--content--buttons-btn">Подробнее о турнире</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -362,26 +364,43 @@
         </div>
     </section>
     <section class="details" id="details">
+        <div class="details__content--airplane">
+            <img src="./assets/airplane%20.png" alt="airplane">
+        </div>
         <div class="details__title">
             <h1> Этапы преображения Васюков </h1>
             <!--            $content-after-title / var(--content-after-title)//variable-->
         </div>
         <div class="details__content">
-            <div class="details__content--airplane">
-                <img src="./assets/airplane%20.png" alt="airplane">
-            </div>
-            <div class="details__content--item grid1"><span>1</span><p>Строительство железнодорожной магистрали Москва-Васюки</p></div>
-            <div class="details__content--item grid2"><span>4</span><p>Строительство дворца для турнира</p></div>
-            <div class="details__content--item grid3"><span>6</span><p>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p></div>
-            <div class="details__content--item grid4"><span>2</span><p>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p></div>
-            <div class="details__content--item grid5"><span>5</span><p>Размещение гаражей для гостевого автотранспорта</p></div>
-            <div class="details__content--item grid6"><span>3</span><p>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p></div>
-            <div class="details__content--item grid7"><span>7</span><p>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p></div>
-<!--            <div class="details__content&#45;&#45;item grid8"></div>-->
-<!--            <div class="details__content&#45;&#45;item grid9"></div>-->
+          <div class="details__content--track">
+              <div class="details__content--item grid1"><span>1</span>
+                  <p>Строительство железнодорожной магистрали Москва-Васюки</p></div>
+              <div class="details__content--item grid2"><span>4</span>
+                  <p>Строительство дворца для турнира</p></div>
+              <div class="details__content--item grid3"><span>6</span>
+                  <p>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p></div>
+              <div class="details__content--item grid4"><span>2</span>
+                  <p>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p></div>
+              <div class="details__content--item grid5"><span>5</span>
+                  <p>Размещение гаражей для гостевого автотранспорта</p></div>
+              <div class="details__content--item grid6"><span>3</span>
+                  <p>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры,
+                      шоколадных конфет</p></div>
+              <div class="details__content--item grid7"><span>7</span>
+                  <p>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все
+                      концы света, включая Лос-Анжелос и Мельбурн</p></div>
+              <!--            <div class="details__content&#45;&#45;item grid8"></div>-->
+              <!--            <div class="details__content&#45;&#45;item grid9"></div>-->
+          </div>
         </div>
         <div class="details__pagination">
-            <div class="details__pagination--prev"> <img src="./assets/carousel%20button%20left.png" alt="arrow"></div>
+            <div class="details__pagination--prev">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="22" transform="rotate(-180 22 22)" fill="#313131"/>
+                    <path d="M24.5382 30.4615L16.0767 21.9999L24.5382 13.5384" stroke="white" stroke-width="2"
+                          stroke-linecap="square"/>
+                </svg>
+            </div>
             <div class="details__pagination--dots">
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -389,8 +408,15 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-            <div class="details__pagination--next"><img src="./assets/carousel%20button%20right.png" alt="arrow"></div>
+            <div class="details__pagination--next">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="22" fill="#313131"/>
+                    <path d="M19.4618 13.5384L27.9233 21.9999L19.4618 30.4615" stroke="white" stroke-width="2"
+                          stroke-linecap="square"/>
+                </svg>
+            </div>
         </div>
     </section>
     <section class="tournament">
@@ -398,73 +424,95 @@
             <div class="tournament__header--title">Участники турнира</div>
             <div class="tournament__header--pagination">
                 <div class="tournament__header--pagination--arrow-left">
-                    <img src="./assets/carousel%20button%20left.png" alt="arrow">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="22" cy="22" r="22" transform="rotate(-180 22 22)" fill="#313131"/>
+                        <path d="M24.5382 30.4615L16.0767 21.9999L24.5382 13.5384" stroke="white" stroke-width="2"
+                              stroke-linecap="square"/>
+                    </svg>
+
                 </div>
                 <div class="tournament__header--pagination--counter">
-                    1 / 3
+                    1 / 2
                 </div>
                 <div class="tournament__header--pagination--arrow-right">
-                    <img src="./assets/carousel%20button%20right.png" alt="arrow">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="22" cy="22" r="22" fill="#313131"/>
+                        <path d="M19.4618 13.5384L27.9233 21.9999L19.4618 30.4615" stroke="white" stroke-width="2"
+                              stroke-linecap="square"/>
+                    </svg>
+
                 </div>
             </div>
         </div>
         <div class="tournament__slider">
-           <div class="tournament__slider--track">
-               <div class="tournament__slider--slide item">
-                   <div class="tournament__slider--slide--image">
-                       <img src="./assets/slide-item.png" alt="slide item">
-                   </div>
-                   <div class="tournament__slider--slide--title">Хозе-Рауль Капабланка</div>
-                   <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
-                   <div class="tournament__slider--slide--details"><button>Подробнее</button></div>
+            <div class="tournament__slider--track">
+                <div class="tournament__slider--slide item">
+                    <div class="tournament__slider--slide--image">
+                        <img src="./assets/slide-item.png" alt="slide item">
+                    </div>
+                    <div class="tournament__slider--slide--title">Хозе-Рауль Капабланка</div>
+                    <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
+                    <div class="tournament__slider--slide--details">
+                        <button>Подробнее</button>
+                    </div>
 
-               </div>
-               <div class="tournament__slider--slide item">
-                   <div class="tournament__slider--slide--image">
-                       <img src="./assets/slide-item.png" alt="slide item">
-                   </div>
-                   <div class="tournament__slider--slide--title">Эммануил Ласкер</div>
-                   <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
-                   <div class="tournament__slider--slide--details"><button>Подробнее</button></div>
+                </div>
+                <div class="tournament__slider--slide item">
+                    <div class="tournament__slider--slide--image">
+                        <img src="./assets/slide-item.png" alt="slide item">
+                    </div>
+                    <div class="tournament__slider--slide--title">Эммануил Ласкер</div>
+                    <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
+                    <div class="tournament__slider--slide--details">
+                        <button>Подробнее</button>
+                    </div>
 
-               </div>
-               <div class="tournament__slider--slide item">
-                   <div class="tournament__slider--slide--image">
-                       <img src="./assets/slide-item.png" alt="slide item">
-                   </div>
-                   <div class="tournament__slider--slide--title">Александр Алехин</div>
-                   <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
-                   <div class="tournament__slider--slide--details"><button>Подробнее</button></div>
+                </div>
+                <div class="tournament__slider--slide item">
+                    <div class="tournament__slider--slide--image">
+                        <img src="./assets/slide-item.png" alt="slide item">
+                    </div>
+                    <div class="tournament__slider--slide--title">Александр Алехин</div>
+                    <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
+                    <div class="tournament__slider--slide--details">
+                        <button>Подробнее</button>
+                    </div>
 
-               </div>
-               <div class="tournament__slider--slide item">
-                   <div class="tournament__slider--slide--image">
-                       <img src="./assets/slide-item.png" alt="slide item">
-                   </div>
-                   <div class="tournament__slider--slide--title">Арон Нимцович</div>
-                   <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
-                   <div class="tournament__slider--slide--details"><button>Подробнее</button></div>
+                </div>
+                <div class="tournament__slider--slide item">
+                    <div class="tournament__slider--slide--image">
+                        <img src="./assets/slide-item.png" alt="slide item">
+                    </div>
+                    <div class="tournament__slider--slide--title">Арон Нимцович</div>
+                    <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
+                    <div class="tournament__slider--slide--details">
+                        <button>Подробнее</button>
+                    </div>
 
-               </div>
-               <div class="tournament__slider--slide item">
-                   <div class="tournament__slider--slide--image">
-                       <img src="./assets/slide-item.png" alt="slide item">
-                   </div>
-                   <div class="tournament__slider--slide--title">Рихард Рети</div>
-                   <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
-                   <div class="tournament__slider--slide--details"><button>Подробнее</button></div>
+                </div>
+                <div class="tournament__slider--slide item">
+                    <div class="tournament__slider--slide--image">
+                        <img src="./assets/slide-item.png" alt="slide item">
+                    </div>
+                    <div class="tournament__slider--slide--title">Рихард Рети</div>
+                    <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
+                    <div class="tournament__slider--slide--details">
+                        <button>Подробнее</button>
+                    </div>
 
-               </div>
-               <div class="tournament__slider--slide item">
-                   <div class="tournament__slider--slide--image">
-                       <img src="./assets/slide-item.png" alt="slide item">
-                   </div>
-                   <div class="tournament__slider--slide--title">Остап Бендер</div>
-                   <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
-                   <div class="tournament__slider--slide--details"><button>Подробнее</button></div>
+                </div>
+                <div class="tournament__slider--slide item">
+                    <div class="tournament__slider--slide--image">
+                        <img src="./assets/slide-item.png" alt="slide item">
+                    </div>
+                    <div class="tournament__slider--slide--title">Остап Бендер</div>
+                    <div class="tournament__slider--slide--description">Чемпион мира по шахматам</div>
+                    <div class="tournament__slider--slide--details">
+                        <button>Подробнее</button>
+                    </div>
 
-               </div>
-           </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -478,10 +526,11 @@
         </div>
     </section>
     <footer class="footer">
-       <span> Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</span>
+        <span> Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</span>
     </footer>
 </div>
 
+<script src="main.js"></script>
 <script src="index.js"></script>
 </body>
 </html>

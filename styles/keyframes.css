@@ -3,7 +3,7 @@
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(5deg);
+    transform: rotate(6deg);
   }
   100% {
     transform: rotate(0deg);
@@ -27,6 +27,4 @@
   100% {
     transform: translateX(-100%);
   }
-}
-
-/*# sourceMappingURL=keyframes.css.map */
+}/*# sourceMappingURL=keyframes.css.map */
