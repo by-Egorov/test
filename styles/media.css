@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@media (max-width: 375px) {
+  .tournament__slider--slide {
+    flex: 0 0 100%; /* Для 1 слайда на экране */
+  }
+}
+
+/*# sourceMappingURL=media.css.map */
